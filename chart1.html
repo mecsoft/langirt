@@ -1,0 +1,93 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+	"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+	<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="refresh" content="60">
+	<script src="http://code.jquery.com/jquery-1.9.0.js"></script>
+	<script src="https://code.highcharts.com/highcharts.js"></script>
+	<style>
+	html, body{
+		height: 100%;
+		width: 90%;
+	}
+	#container{
+		height: 100%;
+		width: 100%;
+	}
+	</style>
+	</head>
+	<body style="background-color: transparent;">
+	<div id="container" style="background-color: transparent; min-width: 330px;margin: 0 auto"></div>
+
+	<script>
+	$(function() {
+	  $('#container').highcharts({
+		chart: {
+		  type: 'column',
+		  backgroundColor: null
+		},
+		credits: {
+		  enabled: false
+		},
+		title: {
+		  text: 'İllere Göre Kaza Sayıları',
+			style: {
+				color: '#FFF'
+			}
+		},
+		xAxis: {
+		  type: 'category',
+		  labels: {
+			rotation: -45,
+			style: {
+			  fontSize: '13px',
+			  fontFamily: 'Verdana, sans-serif',
+			  color: 'white'
+			}
+		  }
+		},
+		yAxis: {
+		  min: 0,
+		  title: {
+			text: 'Kaza Sayısı (Adet)',
+			style: {
+				color: '#FFF'
+			}
+		  }
+		},
+		legend: {
+		  enabled: false
+		},
+		tooltip: {
+		  pointFormat: 'Toplam kaza sayısı: <b>{point.y:.0f}</b>'
+		},
+		series: [{
+		  name: 'Population',
+		  data: [
+			['İstanbul', 350],
+			['Ankara', 220],
+			['İzmir', 180],
+			['Bursa', 101],
+			['Antalya', 89]
+		  ],
+		  dataLabels: {
+			enabled: true,
+			rotation: -90,
+			color: '#FFFFFF',
+			align: 'right',
+			format: '{point.y:.0f}', // one decimal
+			y: 10, // 10 pixels down from the top
+			style: {
+			  fontSize: '13px',
+			  fontFamily: 'Verdana, sans-serif'
+			}
+		  }
+		}]
+	  });
+	});
+
+	</script>
+	
+	</body>
+</html>
