@@ -1,0 +1,65 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+	"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+	<head>
+	<meta charset="UTF-8">
+	<script src="http://code.jquery.com/jquery-1.9.0.js"></script>
+		<script src="https://code.highcharts.com/highcharts.js"></script>
+	</head>
+	<body style="background-color: transparent;">
+	
+
+	<div id="container" style="background-color: transparent; min-width: 330px; height: 178px; margin: 0 auto"></div>
+	
+	<script>
+	$(function () {
+		$('#container').highcharts({
+			chart: {
+				type: 'line',
+				backgroundColor: null
+			},
+			credits: {
+			  enabled: false
+			},
+			title: {
+				text: 'Doldurma Süresi',
+				style: {
+					color: '#FFF'
+				}
+			},
+			xAxis: {
+				categories: ['04.02', '05.02', '06.02', '07.02', '08.02', '09.02', '10.02'],
+				labels: {
+					style: {
+					  color: 'white'
+					}
+				 }
+			},
+			yAxis: {
+				title: {
+					text: 'Dakika',
+					 style: {
+						color: '#FFF'
+					 }
+				},
+			},
+			plotOptions: {
+				line: {
+					dataLabels: {
+						enabled: true,
+						style: {
+							color: '#FFF'
+						 }
+					},
+					enableMouseTracking: false
+				}
+			},
+			series: [{
+				name: 'Doldurma Süresi',
+				data: [9, 6, 9, 14, 18, 21, 5]
+			}]
+		});
+	});
+	</script>
+	</body>
+</html>
